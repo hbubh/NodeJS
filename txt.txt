@@ -1,0 +1,12 @@
+### כאן הקישור שמראה כל סטטוס (200-600) ומה המשמעות שלו
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#successful_responses
+
+
+
+/// TODO
+#### מה ההבדל בין אטלס למונגו רגיל
+#### למה הDB שומר  מפתח בשם __V:0
+
+
+///lec 7 notes
+1. throw work with promises BIMKOM return

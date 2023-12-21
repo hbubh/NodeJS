@@ -1,0 +1,84 @@
+### GET all users:
+
+GET http://localhost:8080/api/v1/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
+
+
+
+### Add a user:
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "inon",
+    "last": "Root"
+  },
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "country": "Israel",
+    "state": "anyState",
+    "houseNumber": 20,
+    "zip": "12345"
+  },
+  "image": {
+    "alt": "user-profile",
+    "url": "https://picsum.photos/200/300"
+  },
+  "phone": "050-8123091",
+  "email": "Way2e@batcave.com",
+  "isBusiness": true,
+  "password": "123456aA!"
+}
+
+### LOGIN:
+POST http://localhost:8080/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email":"admin@gmail.com",
+  "password":"123456aA!"
+}
+
+### get user by id/ JWT admin:
+GET http://localhost:8080/api/v1/users/6582d3517331097ca0abbf6d
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBnYW1pbC5jb20iLCJpYXQiOjE3MDMwNzQyOTJ9.W7eAF24XFZqygOFYmZ1MkJ4G62TxYX67AAORBEYFnqw
+
+
+
+### PUT update user:
+PUT http://localhost:8080/api/v1/users/6582d3517331097ca0abbf6d
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldheTNlQGJhdGNhdmUuY29tIiwiaWF0IjoxNzAzMDg3MDg1fQ.gxro75_g-jHUJXTRq5wQ8a8c60vopc6EhIsPFH77Bv0
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "Bruce!",
+    "last": "Wayne!"
+  },
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "country": "Israel",
+    "houseNumber": 20,
+    "zip": "12345"
+  },
+  "image": {
+    "alt": "user-profile",
+    "url": "https://picsum.photos/200/300"
+  },
+  "phone": "050-8123091",
+  "email": "Wayne@batcave.com",
+  "isBusiness": true,
+  "password": "123456aA!" 
+}
+
+### PUT update bizz user:
+PATCH  http://localhost:8080/api/v1/users/6582dd885d445ae6adb3b61a
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
+
+
+### DELETE Bruce Wayne with JWT of Wayne:
+DELETE http://localhost:8080/api/v1/users/6582d2b87331097ca0abbf5d
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY

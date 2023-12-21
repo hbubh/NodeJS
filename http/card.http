@@ -1,0 +1,71 @@
+### Get my-cards:
+GET http://localhost:8080/api/v1/cards/my-cards
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldheW5lQGJhdGNhdmUuY29tIiwiaWF0IjoxNzAzMDc2OTM1fQ.YPAlUQzdgZbchzRvOObJuCAZeEf4zaxZcHrtGZds7gM
+
+
+### Get card by Id:
+GET http://localhost:8080/api/v1/cards/6582d18427923f2266c5f2d5
+
+
+
+### GET all cards:
+
+GET http://localhost:8080/api/v1/cards
+
+
+### create new card
+POST http://localhost:8080/api/v1/cards
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldheTJlQGJhdGNhdmUuY29tIiwiaWF0IjoxNzAzMDg4NTQzfQ.j6jjaXNbNLqjpThwZCxl1GRH2aGD25G4vYVSrxRG494
+Content-Type: application/json
+
+{
+"title":"card1",
+"subtitle":"the card number 1",
+"description":"walla walla walla",
+"phone":"054-8339879",
+"email":"card7@gmail.com",
+"address":{
+  "street": "123 Main St",
+    "city": "Anytown",
+    "country": "Israel",
+    "houseNumber": 20,
+    "zip": "12345"
+}
+}
+
+
+### PUT edit cards:
+PUT http://localhost:8080/api/v1/cards/6582e4dcf86d823f5ebb656a
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldheW5lQGJhdGNhdmUuY29tIiwiaWF0IjoxNzAzMDc3MzQ5fQ.4v_YxKK79gZKObmyrQISv5GYPePJVZcFBMrl56s4jkU
+Content-Type: application/json
+
+{
+  "title": "Eden and Elisheva then Inon",
+  "subtitle":"3",
+  "description":"hellooooooo",
+  "web":"www.fsgsf.co.il",
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "country": "Israel",
+    "houseNumber": 20,
+    "zip": "12345"
+  },
+  "image": {
+    "alt": "user-profile",
+    "url": "https://picsum.photos/200/300"
+  },
+  "phone": "050-8123091",
+  "email": "Way@batcave.com"
+}
+
+### like card
+
+PATCH  http://localhost:8080/api/v1/cards/6582d18427923f2266c5f2df
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
+
+### delete card
+
+DELETE   http://localhost:8080/api/v1/cards/6582e4acf86d823f5ebb655c
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
+
