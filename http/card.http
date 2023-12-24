@@ -61,7 +61,7 @@ Content-Type: application/json
 
 ### like card
 
-PATCH  http://localhost:8080/api/v1/cards/6582d18427923f2266c5f2df
+PATCH  http://localhost:8080/api/v1/cards/65831d5c18f994833cc3aa0b
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
 
 ### delete card

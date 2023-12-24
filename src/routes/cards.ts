@@ -86,7 +86,7 @@ cardsRouter.put("/:id", isUsersCard, async (req, res, next) => {
   }
 });
 
-//update liked by user
+//update like by user
 cardsRouter.patch(
   "/:id",
   validateToken,
