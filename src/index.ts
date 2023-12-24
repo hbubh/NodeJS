@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 app.use(json());
-app.use(morgan("dev")); //TODO change to prod here and in ENV
+app.use(morgan("prod"));
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/cards", cardsRouter);
 app.use(errorHandler);

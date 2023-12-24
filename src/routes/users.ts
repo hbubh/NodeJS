@@ -28,13 +28,17 @@ usersRouter.put(
   isUser,
   validataUserRegister,
   async (req, res, next) => {
-    req.body.password = await hashPassword(req.body.password);
-    const { password, ...saved } = await User.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body,
-      { new: true }
-    );
-    res.json({ saved });
+    try {
+      req.body.password = await hashPassword(req.body.password);
+      const { password, ...saved } = await User.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+        { new: true }
+      );
+      res.json({ saved });
+    } catch (e) {
+      next(e);
+    }
   }
 );
 

@@ -4,7 +4,6 @@ import { verifyJWT } from "../service/auth_service";
 import { User } from "../database/model/user";
 import { extractToken } from "./isAdmin";
 import { isValidObjectId } from "mongoose";
-import { Logger } from "../logs/logger";
 
 const isAdminOrUser: RequestHandler = async (req, res, next) => {
   try {
