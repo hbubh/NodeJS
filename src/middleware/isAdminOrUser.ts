@@ -3,10 +3,18 @@ import { AppError } from "../error/appError";
 import { verifyJWT } from "../service/auth_service";
 import { User } from "../database/model/user";
 import { extractToken } from "./isAdmin";
+import { isValidObjectId } from "mongoose";
+import { Logger } from "../logs/logger";
 
 const isAdminOrUser: RequestHandler = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const valid = isValidObjectId(id);
+    if (!valid) {
+      throw new AppError("The Id is not type of ObjectId", 401);
+    }
+    const userExist = await User.findById(id);
+    if (!userExist) throw new AppError("User does not exist", 401);
     const token = extractToken(req);
     const { email } = verifyJWT(token);
     const user = await User.findOne({ email });

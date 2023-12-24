@@ -6,10 +6,17 @@ import { User } from "../database/model/user";
 import { Card } from "../database/model/card";
 import { AppError } from "../error/appError";
 import { IUser } from "../@types/user";
+import { isValidObjectId } from "mongoose";
 
 const isUsersCard: RequestHandler = async (req, res, next) => {
   try {
     const { id } = req.params; //
+    const valid = isValidObjectId(id);
+    if (!valid) {
+      throw new AppError("The Id is not type of ObjectId", 401);
+    }
+    const cardExist = await Card.findById(id);
+    if (!cardExist) throw new AppError("Card does not exist", 401);
     const token = extractToken(req);
     const { email } = verifyJWT(token);
 

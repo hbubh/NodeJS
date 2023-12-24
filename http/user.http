@@ -42,8 +42,8 @@ Content-Type: application/json
 }
 
 ### get user by id/ JWT admin:
-GET http://localhost:8080/api/v1/users/6582d3517331097ca0abbf6d
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBnYW1pbC5jb20iLCJpYXQiOjE3MDMwNzQyOTJ9.W7eAF24XFZqygOFYmZ1MkJ4G62TxYX67AAORBEYFnqw
+GET http://localhost:8080/api/v1/users/65831d5c18f994833cc3a98eb
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzA3MjUzN30.ISRrCHGef3n-VGmUQvll10lUZo47l6V16SsgTa-W2YY
 
 
 
